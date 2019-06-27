@@ -1,0 +1,36 @@
+body {
+    height: 100%;
+    background-image: url(../images/ren-and-stimpy-wallpaper-16-768818.jpg);
+    background-repeat: no-repeat;
+	background-size: 100%;
+	text-align: center;
+	background-attachment: fixed;
+}
+
+#title {
+    font-weight: bold;
+    font-size: 80px;
+    color: purple;
+}
+
+#wrapper {
+    padding-top: 50px;
+    width: 960px;
+    background-color: burlywood;
+    min-height: 80%;
+    box-sizing: border-box;
+    padding: 5% 0;
+    margin: 5% auto;
+}
+
+#start-button {
+    width: 300px;
+    height: 100px;
+    color: purple;
+    background-color: aquamarine;
+    font-size: 40px;
+}
+
+h2 {
+    color:white;
+}
