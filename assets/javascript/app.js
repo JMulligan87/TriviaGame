@@ -9,11 +9,11 @@ $(document).ready(function () {
             $("#container").append("<h2>" + questions[i].question + "</h2>");
             for (var j = 0; j < questions[i].answers.length; j++) {
                 $("#container").append("<input type='radio' name='question-" + i +
-                    "' value='" + questions[i].answers[j] + "''>" + questions[i].answers[j]);
+                "' value='" + questions[i].answers[j] + "''>" + questions[i].answers[j]);
             }
         }
     })
-
+    
     var questions = [{
         question: "What is the name of the superhero in Ren and Stimpy?",
         answers: [" Mr. Horse ", " Powdered Toast Man ", " Sven Höek ", " Waffle Woman "],
@@ -27,7 +27,7 @@ $(document).ready(function () {
         answers: [" Matt Groening ", " John Kricfalusi ", " Mark Summers ", " Larry David "],
         correctAnswer: " John Kricfalusi "
     }, {
-        question: "Marvel Comics produced comics based on Ren and Stimpy",
+        question: "Marvel Comics produced comics based on Ren and Stimpy.",
         answers: [" True ", " False "],
         correctAnswer: " True "
     }, {
@@ -35,11 +35,11 @@ $(document).ready(function () {
         answers: [" 4 ", " 11 ", " 6 ", " 7 "],
         correctAnswer: " 7 "
     }, {
-        question: "Who originally produced Ren and Stimpy",
+        question: "Who originally produced Ren and Stimpy?",
         answers: [" Spumco ", " Nickelodeon ", " Disney ", " Comedy Central "],
         correctAnswer: " Spumco "
     }, {
-        question: "What does Ren often call Stimpy",
+        question: "What does Ren often call Stimpy?",
         answers: [" A moron ", " An idiot ", " A dummy ", " A dimwit "],
         correctAnswer: " An idiot "
     }, {
@@ -47,5 +47,35 @@ $(document).ready(function () {
         answers: [" He hits him with a wrench ", " He slaps him ", " He trips him ", " He brushes his teeth "],
         correctAnswer: " He brushes his teeth "
     }];
+    
+    
+    var triviaGame = {
+        correct: 0,
+        incorrect: 0,
+        counter: 120,
+        countdown: function () {
+            triviaGame.counter--;
+            $("#counter").html(triviaGame.counter);
+            if (triviaGame.counter === 0) {
+                triviaGame.done();
+            }
+        },
+        start: function () {
+           // $("#start-button").remove();
+            timer = setInterval(triviaGame.countdown, 1000);
+            $("#container").prepend("<h2>Time Left: <span id='counter'>120</span> Seconds</h2>");
+            for (var i = 0; i < questions.length; i++) {
+                $("#container").append("<h2>" + questions[i].question + "</h2>");
+                for (var j = 0; j < questions[i].answers.length; j++) {
+                    $("#container").append("<input type='radio' name='question-" + i +
+                        "' value='" + questions[i].answers[j] + "''>" + questions[i].answers[j]);
+                }
+            }
+        },
+        done: function () {
 
+        }
+
+    }
 });
+

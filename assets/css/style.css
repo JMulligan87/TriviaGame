@@ -13,14 +13,8 @@ body {
     color: purple;
 }
 
-#wrapper {
-    padding-top: 50px;
-    width: 960px;
+.jumbotron {
     background-color: burlywood;
-    min-height: 80%;
-    box-sizing: border-box;
-    padding: 5% 0;
-    margin: 5% auto;
 }
 
 #start-button {
